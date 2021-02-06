@@ -1,0 +1,378 @@
+AREA .  .ABS.
+	RADIX HEX
+	BASE 0000
+	SIZE 0000
+	ATTRIB ABS OVR
+	GLOBALS
+		l__HEAP	0000
+		l__BSEG	0000
+		l_.  .ABS.	0000
+		l__GSFINAL	0000
+		l__ISEG	0000
+		s_.  .ABS.	0000
+		s__HEADER	0000
+		l__XSEG	0000
+		.init	0000
+		l__OVERLAY	0000
+		l__LIT	0000
+		s__SFR	0000
+		l__GSINITTAIL	0001
+		l__BSS	0059
+		l__HOME	01AC
+		l__HEADER	01E1
+		l__BASE	01EE
+		s__CODE	0200
+		l__DATA	0AEB
+		l__CODE	10F8
+		s__HOME	12F8
+		s__BASE	14A4
+		s__LIT	1692
+		s__GSINIT	1692
+		l__GSINIT	3FF6
+		s__GSINITTAIL	5688
+		s__GSFINAL	5689
+		.OAM	C000
+		s__DATA	C0A0
+		s__BSS	CB8B
+		s__HEAP	CBE4
+		s__BSEG	CBE4
+		s__ISEG	CBE4
+		s__XSEG	CBE4
+		s__OVERLAY	CBE4
+		.STACK	E000
+		.refresh_OAM	FF80
+		l__SFR	10000
+AREA _CODE
+	RADIX HEX
+	BASE 0200
+	SIZE 10F8
+	ATTRIB REL CON
+	GLOBALS
+		_Start	0200
+		_MoveSprite	0254
+		_moveSpeed	02F4
+		_spritesize	02F5
+		_COLLISION_OFFSET	02F6
+		_LANES	02F7
+		_END_POINT	02FD
+		_CAR_POSITIONS	02FF
+		_SetupPlayerChar	0318
+		_GenerateCarPosition	0390
+		_SetupOtherCars	03AC
+		_GetCarCollision	0610
+		_MoveCars	06D4
+		_ResetScoreDigits	080E
+		_DIGITS	0875
+		_UpdateScoreDigits	0915
+		_UpdateHighScoreDigits	0A41
+		_performDelay	0B6D
+		_EDGE_LEFT	0B81
+		_EDGE_RIGHT	0B82
+		_EDGE_TOP	0B83
+		_EDGE_BOTTOM	0B84
+		_SCORE_DELAY	0B85
+		_LVL2_REQ	0B86
+		_LVL3_REQ	0B87
+		_SetupCarsTiles	0B88
+		_CheckCollision	0B9A
+		_CheckPlayerInputGame	0BDA
+		_ResetScore	0D44
+		_IncramentScore	0D65
+		_UpdateScore	0DA8
+		_SaveNewHighScore	0E50
+		_CheckForHighScore	0ED9
+		_CheckForScoreError	0F84
+		_Gameplay	0FE1
+		_Results	10C1
+		_ResultsScreen	1115
+		_LoadBackgroundSpriteData	127D
+		_main	12CA
+AREA _HEADER
+	RADIX HEX
+	BASE 0000
+	SIZE 01E1
+	ATTRIB ABS OVR
+	GLOBALS
+		_exit	01D2
+AREA _HOME
+	RADIX HEX
+	BASE 12F8
+	SIZE 01AC
+	ATTRIB REL CON
+	GLOBALS
+		.set_mode	12F8
+		.remove_VBL	1308
+		.remove_LCD	130E
+		.remove_TIM	1314
+		.remove_SIO	131A
+		.remove_JOY	1320
+		.add_VBL	1326
+		.add_LCD	132C
+		.add_TIM	1332
+		.add_SIO	1338
+		.add_JOY	133E
+		.remove_int	1344
+		.add_int	1364
+		.wait_vbl_done	1380
+		_wait_vbl_done	1380
+		_display_off	1397
+		.display_off	1397
+		.serial_IO	13B8
+		_mode	13E7
+		_get_mode	13F0
+		_enable_interrupts	13F5
+		_disable_interrupts	13F7
+		_reset	13F9
+		.reset	13F9
+		_set_interrupts	13FF
+		_remove_VBL	140A
+		_remove_LCD	1415
+		_remove_TIM	1420
+		_remove_SIO	142B
+		_remove_JOY	1436
+		_add_VBL	1441
+		_add_LCD	144C
+		_add_TIM	1457
+		_add_SIO	1462
+		_add_JOY	146D
+		_clock	1478
+		__printTStates	1481
+		banked_call	1482
+		banked_ret	149B
+AREA _BASE
+	RADIX HEX
+	BASE 14A4
+	SIZE 01EE
+	ATTRIB REL CON
+	GLOBALS
+		.set_sprite_prop	14A4
+		_set_sprite_prop	14B1
+		_scroll_bkg	14BC
+		_move_win	14D2
+		.mv_sprite	14DB
+		_move_sprite	14EA
+		_set_win_data	14F7
+		_set_bkg_data	14F7
+		_set_sprite_data	1544
+		_set_win_tiles	1573
+		.padup	1587
+		_waitpadup	1587
+		.jpad	1597
+		.wait_pad	15C4
+		_joypad	15CB
+		_waitpad	15D0
+		.set_sprite_tile	15DA
+		_set_sprite_tile	15E7
+		.copy_vram	15F2
+		_get_data	1601
+		_set_data	1601
+		_set_bkg_tiles	1614
+		.set_xy_wtt	1628
+		.set_xy_btt	1639
+		.set_xy_tt	1648
+		_set_tiles	1679
+AREA _LIT
+	RADIX HEX
+	BASE 1692
+	SIZE 0000
+	ATTRIB REL CON
+AREA _GSINIT
+	RADIX HEX
+	BASE 1692
+	SIZE 3FF6
+	ATTRIB REL CON
+	GLOBALS
+		gsinit	1692
+AREA _GSINITTAIL
+	RADIX HEX
+	BASE 5688
+	SIZE 0001
+	ATTRIB REL CON
+AREA _GSFINAL
+	RADIX HEX
+	BASE 5689
+	SIZE 0000
+	ATTRIB REL CON
+AREA _DATA
+	RADIX HEX
+	BASE C0A0
+	SIZE 0AEB
+	ATTRIB REL CON
+	GLOBALS
+		_StartScreen	C0A0
+		_playerCar	C208
+		_OtherCars	C210
+		_driftSpeed	C240
+		_cp_index	C241
+		_Car	C242
+		_HUD_Map	C442
+		_DGT_SCORE_1	C47E
+		_DGT_SCORE_2	C47F
+		_DGT_SCORE_3	C480
+		_DGT_SCORE_4	C481
+		_DGT_SCORE_5	C482
+		_DGT_SCORE_6	C483
+		_DGT_HIGH_1	C484
+		_DGT_HIGH_2	C485
+		_DGT_HIGH_3	C486
+		_DGT_HIGH_4	C487
+		_DGT_HIGH_5	C488
+		_DGT_HIGH_6	C489
+		_highScore	C48A
+		_GAME_SPEED	C490
+		_DRIFT_DELAY	C491
+		_CRNT_DELAY	C492
+		_isAlive	C493
+		_score	C494
+		_cur_ScoreDelay	C49A
+		_RoadTiles	C49B
+		_HUD_Tiles	C55B
+		_ResultsTiles	C65B
+		_RoadMap	C90B
+AREA _BSS
+	RADIX HEX
+	BASE CB8B
+	SIZE 0059
+	ATTRIB REL CON
+	GLOBALS
+		__cpu	CB8B
+		.mode	CB8C
+		__io_out	CB8D
+		__io_in	CB8E
+		__io_status	CB8F
+		.vbl_done	CB90
+		__current_bank	CB91
+		_sys_time	CB92
+		.sys_time	CB92
+		.int_0x40	CB94
+		.int_0x48	CBA4
+		.int_0x50	CBB4
+		.int_0x58	CBC4
+		.int_0x60	CBD4
+AREA _HEAP
+	RADIX HEX
+	BASE CBE4
+	SIZE 0000
+	ATTRIB REL CON
+	GLOBALS
+		_malloc_heap_start	CBE4
+AREA _OVERLAY
+	RADIX HEX
+	BASE CBE4
+	SIZE 0000
+	ATTRIB REL CON
+AREA _ISEG
+	RADIX HEX
+	BASE CBE4
+	SIZE 0000
+	ATTRIB REL CON
+AREA _BSEG
+	RADIX HEX
+	BASE CBE4
+	SIZE 0000
+	ATTRIB REL CON
+AREA _XSEG
+	RADIX HEX
+	BASE CBE4
+	SIZE 0000
+	ATTRIB REL CON
+AREA _SFR
+	RADIX HEX
+	BASE 0000
+	SIZE 10000
+	ATTRIB ABS OVR
+	GLOBALS
+		_P1_REG	FF00
+		_SB_REG	FF01
+		_SC_REG	FF02
+		_DIV_REG	FF04
+		_TIMA_REG	FF05
+		_TMA_REG	FF06
+		_TAC_REG	FF07
+		_IF_REG	FF0F
+		_NR10_REG	FF10
+		_NR11_REG	FF11
+		_NR12_REG	FF12
+		_NR13_REG	FF13
+		_NR14_REG	FF14
+		_NR21_REG	FF16
+		_NR22_REG	FF17
+		_NR23_REG	FF18
+		_NR24_REG	FF19
+		_NR30_REG	FF1A
+		_NR31_REG	FF1B
+		_NR32_REG	FF1C
+		_NR33_REG	FF1D
+		_NR34_REG	FF1E
+		_NR41_REG	FF20
+		_NR42_REG	FF21
+		_NR43_REG	FF22
+		_NR44_REG	FF23
+		_NR50_REG	FF24
+		_NR51_REG	FF25
+		_NR52_REG	FF26
+		_LCDC_REG	FF40
+		_STAT_REG	FF41
+		_SCY_REG	FF42
+		_SCX_REG	FF43
+		_LY_REG	FF44
+		_LYC_REG	FF45
+		_DMA_REG	FF46
+		_BGP_REG	FF47
+		_OBP0_REG	FF48
+		_OBP1_REG	FF49
+		_WY_REG	FF4A
+		_WX_REG	FF4B
+		_KEY1_REG	FF4D
+		_VBK_REG	FF4F
+		_HDMA1_REG	FF51
+		_HDMA2_REG	FF52
+		_HDMA3_REG	FF53
+		_HDMA4_REG	FF54
+		_HDMA5_REG	FF55
+		_RP_REG	FF56
+		_BCPS_REG	FF68
+		_BCPD_REG	FF69
+		_OCPS_REG	FF6A
+		_OCPD_REG	FF6B
+		_SVBK_REG	FF70
+		_IE_REG	FFFF
+MODULES
+	FILE e:\GB_Dev\gbdk-2.95-3-win32\gbdk\lib/small/asxxxx/gb/crt0.o
+		NAME Runtime
+	FILE main.o
+		NAME lcc98320
+LIBRARIES
+	LIBRARY e:\GB_Dev\gbdk-2.95-3-win32\gbdk\lib/small/asxxxx/gb/gb.lib
+		MODULE sfr.o
+	LIBRARY e:\GB_Dev\gbdk-2.95-3-win32\gbdk\lib/small/asxxxx/gb/gb.lib
+		MODULE set_prop.o
+	LIBRARY e:\GB_Dev\gbdk-2.95-3-win32\gbdk\lib/small/asxxxx/gb/gb.lib
+		MODULE scroll_b.o
+	LIBRARY e:\GB_Dev\gbdk-2.95-3-win32\gbdk\lib/small/asxxxx/gb/gb.lib
+		MODULE mv_win.o
+	LIBRARY e:\GB_Dev\gbdk-2.95-3-win32\gbdk\lib/small/asxxxx/gb/gb.lib
+		MODULE mv_spr.o
+	LIBRARY e:\GB_Dev\gbdk-2.95-3-win32\gbdk\lib/small/asxxxx/gb/gb.lib
+		MODULE set_data.o
+	LIBRARY e:\GB_Dev\gbdk-2.95-3-win32\gbdk\lib/small/asxxxx/gb/gb.lib
+		MODULE set_wi_t.o
+	LIBRARY e:\GB_Dev\gbdk-2.95-3-win32\gbdk\lib/small/asxxxx/gb/gb.lib
+		MODULE pad.o
+	LIBRARY e:\GB_Dev\gbdk-2.95-3-win32\gbdk\lib/small/asxxxx/gb/gb.lib
+		MODULE set_spr.o
+	LIBRARY e:\GB_Dev\gbdk-2.95-3-win32\gbdk\lib/small/asxxxx/gb/gb.lib
+		MODULE cpy_data.o
+	LIBRARY e:\GB_Dev\gbdk-2.95-3-win32\gbdk\lib/small/asxxxx/gb/gb.lib
+		MODULE set_bk_t.o
+	LIBRARY e:\GB_Dev\gbdk-2.95-3-win32\gbdk\lib/small/asxxxx/gb/gb.lib
+		MODULE set_xy_t.o
+USERBASEDEF
+	_CODE=0x0200
+	_DATA=0xC0A0
+	_CODE_1=0x4000
+USERGLOBALDEF
+	.OAM=0xC000
+	.STACK=0xE000
+	.refresh_OAM=0xFF80
+	.init=0x0000
